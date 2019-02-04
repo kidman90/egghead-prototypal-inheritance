@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Understanding JavaScript's Prototypal Inheritance</title>
+</head>
+
+<body>
+
+  <script>
+    'use strict';
+
+    const foo = {
+      // name: 'Maciej'
+      set name(name) {
+        this.currentName = name;
+      }
+    };
+
+    // Object.defineProperty(foo, 'name', {
+    //   value: 'Maciej',
+    //   writable: false
+    // });
+
+    const bar = {
+      lastName: 'Kacprzak'
+    };
+
+    Object.setPrototypeOf(bar, foo);
+
+    bar.name = 'James';
+
+    console.log(bar.name);
+
+    console.log(bar);
+  </script>
+
+</body>
+
+</html>
