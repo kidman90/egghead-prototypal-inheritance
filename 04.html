@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Understanding JavaScript's Prototypal Inheritance</title>
+</head>
+
+<body>
+
+  <script>
+    function Foo() {
+      // ...
+    }
+
+    Foo.prototype = {};
+
+    Object.defineProperty(Foo.prototype, 'constructor', {
+      enumerable: false,
+      writable: true,
+      configurable: true,
+      value: Foo
+    });
+
+    console.log(Foo.prototype.consstructor);
+
+    const a = new Foo();
+
+    console.log(a.constructor === Foo);
+    console.log(a.constructor === Object);
+  </script>
+
+</body>
+
+</html>
