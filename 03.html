@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Understanding JavaScript's Prototypal Inheritance</title>
+</head>
+
+<body>
+
+  <script>
+    function Car(make) {
+      this.make = make;
+      this.wheels = 1;
+    }
+
+    Car.prototype.wheels = 4;
+    Car.prototype.color = 'silver';
+
+    console.log(Car.prototype);
+
+    const myCar = new Car('Toyota');
+
+    console.log(myCar);
+    console.log(myCar.color);
+    console.log(myCar.wheels);
+
+    console.log({});
+    console.log([]);
+
+    const obj = new Object();
+    const arr = new Array();
+
+    console.log(obj);
+    console.log(arr);
+  </script>
+
+</body>
+
+</html>
