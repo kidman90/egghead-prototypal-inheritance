@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Understanding JavaScript's Prototypal Inheritance</title>
+</head>
+
+<body>
+
+  <script>
+    // function House(color) {
+    //   this.color = color;
+    // }
+
+    const house = {
+      set houseColor(color) {
+        this.color = color;
+      }
+    };
+
+    // const myHouse = new House('white');
+
+    const myHouse = Object.create(house);
+
+    console.log(myHouse.houseColor = 'white');
+
+    console.log(myHouse);
+  </script>
+
+</body>
+
+</html>
